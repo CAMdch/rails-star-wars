@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <h1 class = "main-title">Stars Wars</h1>
+  <% @movies.each do |movie|%>
+    <h4 class= "secondary-title"><%= movie.title %></h4>
+    <div class="row">
+      <% movie.characters.each do |character| %>
+        <div class="col-4">
+          <p><b>Name :</b> <%= character.name %></p>
+          <p><b>Mass :</b> <%= character.mass %></p>
+          <p><b>Homeworld :</b> <%= character.homeworld %></p>
+          <hr>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
